@@ -1,4 +1,12 @@
-<app-sidebar></app-sidebar>
-<app-header></app-header>
 
-<router-outlet></router-outlet>
+<main class="flex">
+
+  <app-sidebar></app-sidebar>
+
+  <section class="flex-1 md:border-l border-neutral-100 min-h-screen">
+    <router-outlet></router-outlet>
+  </section>
+
+</main>
+
+

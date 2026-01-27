@@ -1,1 +1,37 @@
-<p>diagnoses works!</p>
+<section class="">
+  <app-header [title]="'Diagnoses'"></app-header>
+
+  <section class="p-5">
+
+    <ul class="flex items-center gap-2 mb-5">
+      <li *ngFor="let category of radiologyCategories" (click)="handleCategories(category.name)"
+      class="cursor-pointer px-3 py-1 font-semibold rounded-lg duration-300" [ngClass]="category.active ? 'bg-blue-500 text-white' : 'bg-neutral-200'">{{ category.name }}</li>
+    </ul>
+
+    <h1 class="font-bold text-2xl mb-2">Recent Diagnoses</h1>
+    <ul class="flex flex-col gap-1">
+      <li *ngFor="let test of activeRecentDiagnoses" class="bg-neutral-100 duration-300 hover:bg-neutral-200 rounded-lg p-2 flex justify-between items-center">
+        <p class="font-semibold flex flex-col ">
+          <span class="text-lg">{{ test.title }}</span>
+          <span class="text-neutral-500">{{ test.description }}</span>
+          <span class="text-neutral-500">diagnosed: {{ test.diagnosed }}</span>
+        </p>
+        <button class="px-2 rounded-lg" [ngClass]="test.status === 'Active' ? 'bg-green-100 text-green-500' : test.status === 'Resolved' ? 'bg-neutral-100 text-neutral-500' : 'bg-red-100 text-red-500'">{{ test.status }}</button>
+      </li>
+    </ul>
+
+    <h1 class="font-bold text-2xl mb-2 mt-5">Older Diagnoses</h1>
+    <ul class="flex flex-col gap-1">
+      <li *ngFor="let test of activeOlderDiagnoses" class="bg-neutral-100 duration-300 hover:bg-neutral-200 rounded-lg p-2 flex justify-between items-center">
+        <p class="font-semibold flex flex-col ">
+          <span class="text-lg">{{ test.title }}</span>
+          <span class="text-neutral-500">{{ test.description }}</span>
+          <span class="text-neutral-500">diagnosed: {{ test.diagnosed }}</span>
+        </p>
+        <button class="px-2 rounded-lg" [ngClass]="test.status === 'Active' ? 'bg-green-100 text-green-500' : test.status === 'Resolved' ? 'bg-neutral-100 text-neutral-500' : 'bg-red-100 text-red-500'">{{ test.status }}</button>
+      </li>
+    </ul>
+
+  </section>
+
+</section>

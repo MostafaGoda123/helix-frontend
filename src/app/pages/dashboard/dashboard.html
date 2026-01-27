@@ -1,1 +1,92 @@
-<p>dashboard works!</p>
+<section class="">
+
+  <app-header [title]="'Dashboard'"></app-header>
+
+  <section class="p-5">
+
+    <div class="rounded-lg shadow-lg p-5 pb-10 mb-10">
+      <div class="flex items-center justify-between mb-5">
+        <p class="flex flex-col gap-1 font-semibold">
+          <span class="text-xl">Today's Updates</span>
+          <span class="text-neutral-500">Quick Summery</span>
+        </p>
+        <button class="text-sm font-semibold px-4 py-2 rounded-lg border-2 border-neutral-200 text-black/75 cursor-pointer duration-300 hover:text-black hover:bg-black/5">
+          <i class="fa-solid fa-file-export"></i> Export
+        </button>
+      </div>
+      <div class="grid gap-3 md:gap-5 lg:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <article class="bg-neutral-100 rounded-lg shadow-md aspect-square p-5">
+          <h1 class="text-center font-semibold text-neutral-500 md:text-lg flex items-center justify-center gap-2">
+            <img src="dashboard_update_1.png" alt="dashboard_update_1" class="w-6">
+            <span>Prescriptions</span>
+          </h1>
+        </article>
+        <article class="bg-neutral-100 rounded-lg shadow-md aspect-square p-5">
+          <h1 class="text-center font-semibold text-neutral-500 md:text-lg flex items-center justify-center gap-2">
+            <img src="dashboard_update_2.png" alt="dashboard_update_2" class="w-6">
+            <span>Appointments</span>
+          </h1>
+        </article>
+        <article class="bg-neutral-100 rounded-lg shadow-md aspect-square p-5">
+          <h1 class="text-center font-semibold text-neutral-500 md:text-lg flex items-center justify-center gap-2">
+            <img src="dashboard_update_3.png" alt="dashboard_update_3" class="w-6">
+            <span>Medical Records</span>
+          </h1>
+        </article>
+      </div>
+    </div>
+
+    <div class="grid gap-3 md:gap-5 lg:gap-8 grid-cols-1 lg:grid-cols-3">
+
+      <ul class="lg:col-span-2 flex flex-col gap-4 border-2 border-neutral-50 shadow-lg p-5 rounded-lg">
+        <h1 class="font-semibold text-xl mb-5"><i class="fa-solid fa-clock-rotate-left"></i> Recent Uploads</h1>
+        <li class="flex items-center justify-between font-semibold">
+          <div class="flex items-center gap-2">
+            <div class="bg-blue-500 p-3 rounded-full ">
+              <img src="dashboard_update_1.png" alt="file_icon" class="w-6 h-6" style="filter: brightness(0) invert(1);">
+            </div>
+            <p class="flex flex-col">
+              <span>CBC Blood Test</span>
+              <span class="text-neutral-500">2 days ago</span>
+            </p>
+          </div>
+          <p class="text-neutral-500">2 days ago</p>
+        </li>
+        <li class="flex items-center justify-between font-semibold">
+          <div class="flex items-center gap-2">
+            <div class="bg-blue-500 p-3 rounded-full ">
+              <img src="dashboard_update_2.png" alt="file_icon" class="w-6 h-6" style="filter: brightness(0) invert(1);">
+            </div>
+            <p class="flex flex-col">
+              <span>Chest X-Ray</span>
+              <span class="text-neutral-500">1 month ago </span>
+            </p>
+          </div>
+          <p class="text-neutral-500">1 month ago </p>
+        </li>
+        <li class="flex items-center justify-between font-semibold">
+          <div class="flex items-center gap-2">
+            <div class="bg-blue-500 p-3 rounded-full ">
+              <img src="dashboard_update_1.png" alt="file_icon" class="w-6 h-6" style="filter: brightness(0) invert(1);">
+            </div>
+            <p class="flex flex-col">
+              <span>Prescription Updated</span>
+              <span class="text-neutral-500">last week</span>
+            </p>
+          </div>
+          <p class="text-neutral-500">last week</p>
+        </li>
+      </ul>
+
+      <article class="text-white bg-linear-to-b from-blue-400 via-blue-500 to-blue-600 rounded-lg flex flex-col items-center justify-center p-5 gap-2 shadow-lg">
+        <p class="text-xl font-semibold">Ask Healix Al anything</p>
+        <p class="">Get quick medical insights</p>
+        <img src="ask-ai.png" alt="">
+        <button class="text-blue-500 bg-white rounded-lg px-3 py-1 cursor-pointer duration-300 hover:shadow-lg hover:shadow-blue-700 hover:text-blue-700 font-semibold">Ask Ai</button>
+      </article>
+
+    </div>
+
+  </section>
+
+</section>

@@ -1,1 +1,52 @@
-<p>medications works!</p>
+<section class="">
+  <app-header [title]="'Medications'"></app-header>
+
+
+    <section class="p-5">
+
+    <ul class="flex items-center gap-2 mb-5">
+      <li *ngFor="let category of medicationCategories" (click)="handleCategories(category.name)"
+      class="cursor-pointer px-3 py-1 font-semibold rounded-lg duration-300" [ngClass]="category.active ? 'bg-blue-500 text-white' : 'bg-neutral-200'">{{ category.name }}</li>
+    </ul>
+
+    <h1 class="font-bold text-2xl mb-2">Recent Medications</h1>
+    <ul class="flex flex-col gap-3">
+      <li *ngFor="let test of activeRecentMedications" class="border-2 border-neutral-300 shadow bg-neutral-100 duration-300 hover:bg-neutral-200 rounded-lg p-2">
+        <div class="flex justify-between items-center border-b-2 border-neutral-300 pb-2 mb-2">
+          <p class="font-semibold flex flex-col ">
+            <span class="text-lg">{{ test.title }}</span>
+            <span class="text-neutral-500">{{ test.description }}</span>
+            <span class="text-neutral-500">by: {{ test.doctor }}</span>
+            <span class="text-neutral-500">{{ test.time }}</span>
+          </p>
+          <button class="px-2 rounded-lg" [ngClass]="test.status === 'Active' ? 'bg-green-100 text-green-500' : test.status === 'Completed' ? 'bg-amber-100 text-amber-500' : 'bg-red-100 text-red-500'">{{ test.status }}</button>
+        </div>
+        <p class="flex flex-col items-center font-semibold text-neutral-500">
+          <span class="">Frequency: {{ test.frequency }}</span>
+          <span class="">Notes: {{ test.notes }}</span>
+        </p>
+      </li>
+    </ul>
+
+    <h1 class="font-bold text-2xl mb-2 mt-5">Past Medications</h1>
+    <ul class="flex flex-col gap-3">
+      <li *ngFor="let test of activePastMedications" class="border-2 border-neutral-300 shadow bg-neutral-100 duration-300 hover:bg-neutral-200 rounded-lg p-2">
+        <div class="flex justify-between items-center border-b-2 border-neutral-300 pb-2 mb-2">
+          <p class="font-semibold flex flex-col ">
+            <span class="text-lg">{{ test.title }}</span>
+            <span class="text-neutral-500">{{ test.description }}</span>
+            <span class="text-neutral-500">by: {{ test.doctor }}</span>
+            <span class="text-neutral-500">{{ test.time }}</span>
+          </p>
+          <button class="px-2 rounded-lg" [ngClass]="test.status === 'Active' ? 'bg-green-100 text-green-500' : test.status === 'Completed' ? 'bg-amber-100 text-amber-500' : 'bg-red-100 text-red-500'">{{ test.status }}</button>
+        </div>
+        <p class="flex flex-col items-center font-semibold text-neutral-500">
+          <span class="">Frequency: {{ test.frequency }}</span>
+          <span class="">Notes: {{ test.notes }}</span>
+        </p>
+      </li>
+    </ul>
+
+  </section>
+
+</section>

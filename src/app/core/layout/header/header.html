@@ -1,1 +1,22 @@
-<p>header works!</p>
+<section class="p-5 flex items-center justify-between gap-2 md:gap-4 lg:gap-6">
+
+  <h1 class="font-semibold text-2xl">{{ title }}</h1>
+
+  <div class="relative flex-1">
+    <i class="fa-solid fa-magnifying-glass text-black/50 absolute left-2 top-1/2 -translate-y-1/2" ></i>
+    <input type="text" class="duration-300 w-full bg-black/5 rounded-lg p-2 ps-8 outline-none text-black border border-transparent focus:border-black/25 focus:bg-black/10" placeholder="search here...">
+  </div>
+
+  <div class="bg-amber-500/5 rounded-lg text-amber-500 p-1 text-xl">
+    <i class="fa-regular fa-bell"></i>
+  </div>
+
+  <div class="flex items-center gap-2">
+    <img [src]="imgSrc" alt="User Profile" class="w-10 h-10 rounded-full">
+    <p class="flex flex-col text-sm font-semibold">
+      <span>Maryam</span>
+      <span class="text-neutral-500">patient</span>
+    </p>
+  </div>
+
+</section>
