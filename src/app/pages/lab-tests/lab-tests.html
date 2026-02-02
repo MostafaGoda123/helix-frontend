@@ -4,7 +4,7 @@
 
   <section class="p-5">
 
-  <ul class="flex items-center gap-2 mb-5">
+  <ul class="flex items-center gap-2 mb-5 flex-wrap">
     <li *ngFor="let category of labTestsCategories" (click)="handleCategories(category.name)"
     class="cursor-pointer px-3 py-1 font-semibold rounded-lg duration-300" [ngClass]="category.active ? 'bg-blue-500 text-white' : 'bg-neutral-200'">{{ category.name }}</li>
   </ul>

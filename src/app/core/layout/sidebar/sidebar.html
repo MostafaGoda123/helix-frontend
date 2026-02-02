@@ -1,15 +1,33 @@
 
-<section class="p-5 v">
+<section class="p-5 shadow md:shadow-none">
 
-  <div class="flex items-center gap-2 font-semibold text-2xl mb-7 px-3">
-    <img src="logo.png" alt="logo" class="w-10">
-    <h1>Helix</h1>
-  </div>
+  <nav class="flex items-center justify-between text-2xl md:mb-7 md:px-3">
+      <div class="flex items-center gap-2 font-semibold  ">
+        <img src="logo.png" alt="logo" class="w-10">
+        <h1>Helix</h1>
+      </div>
+      <div class="md:hidden">
+        <i (click)="openLinks = true" class="fa-solid fa-bars"></i>
+      </div>
+  </nav>
 
-  <ul class="flex flex-col gap-3 font-semibold text-sm">
+  <ul class="hidden md:flex flex-col gap-3 font-semibold text-sm">
     <li *ngFor="let link of Links" [routerLink]="link.path" class="duration-300 cursor-pointer flex items-center gap-2  border  rounded-lg shadow-md p-3 " [ngClass]="currentPath === link.path ? 'bg-blue-500 text-white border-blue-300':'bg-white border-neutral-50'">
       <img [src]="link.icon" alt="link.name" class="w-6" [style.filter]="currentPath === link.path ? 'brightness(0) invert(1)' : 'none'">
       <a class="">{{link.name}}</a>
+    </li>
+  </ul>
+
+  <ul class="md:hidden fixed top-0 left-0 w-full z-30 p-5 bg-white flex-col gap-3 font-semibold text-sm transition-all duration-300 ease-in-out transform"
+    [ngClass]="openLinks ? 'translate-y-0 opacity-100 flex h-screen': '-translate-y-full opacity-0 pointer-events-none'">
+
+    <div class="flex justify-end mt-2 mb-4">
+      <i (click)="openLinks = false" class="fa-solid fa-xmark text-2xl text-red-500 font-semibold cursor-pointer"></i>
+    </div>
+
+    <li (click)="openLinks = false" *ngFor="let link of Links" [routerLink]="link.path" class="duration-300 cursor-pointer flex items-center gap-2 border rounded-lg shadow-md p-3" [ngClass]="currentPath === link.path ? 'bg-blue-500 text-white border-blue-300' : 'bg-white border-neutral-50'">
+      <img [src]="link.icon" alt="link.name" class="w-6" [style.filter]="currentPath === link.path ? 'brightness(0) invert(1)' : 'none'">
+      <a>{{ link.name }}</a>
     </li>
   </ul>
 

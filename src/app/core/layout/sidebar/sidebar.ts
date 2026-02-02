@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { Router, RouterLink, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
@@ -14,6 +14,7 @@ export class Sidebar implements OnInit, OnDestroy {
 
   currentPath: string = '';
   private routerSub!: Subscription;
+  openLinks: boolean = false;
 
   Links = [
     { name: 'Dashboard', path: '/dashboard', icon: 'Dashboard.png' },
@@ -40,4 +41,18 @@ export class Sidebar implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.routerSub?.unsubscribe();
   }
+
+  // ngOnInit() {
+  //   this.checkScreenSize();
+  // }
+
+  @HostListener('window:resize')
+  onResize() {
+    if (window.innerWidth >= 768) {
+      this.openLinks = false;
+    } else {
+      this.openLinks = false;
+    }
+  }
+
 }
