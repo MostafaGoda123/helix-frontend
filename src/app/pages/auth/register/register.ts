@@ -13,6 +13,9 @@ import { AuthService } from '../../../services/auth';
 })
 export class Register implements OnInit {
 
+  hidePassword: boolean = true;
+  hideConfirmPassword: boolean = true;
+
   registerForm!: FormGroup;
   errorMessage: string = ' ';
 
@@ -88,5 +91,13 @@ export class Register implements OnInit {
       else
         this.errorMessage = ' ';
     }
+  }
+
+  togglePasswordVisibility(): void {
+    this.hidePassword = !this.hidePassword;
+  }
+
+  toggleConfirmPasswordVisibility(): void {
+    this.hideConfirmPassword = !this.hideConfirmPassword;
   }
 }

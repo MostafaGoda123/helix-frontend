@@ -12,6 +12,9 @@ import { AuthService } from '../../../services/auth';
 })
 export class Login {
 window: any;
+
+hidePassword: boolean = true;
+
 alert(arg0: string) {
 throw new Error('Method not implemented.');
 }
@@ -66,6 +69,10 @@ throw new Error('Method not implemented.');
     }else {
       this.errorMessage = "enter your email first";
     }
+  }
+  
+  togglePasswordVisibility(): void {
+    this.hidePassword = !this.hidePassword;
   }
 
 }
