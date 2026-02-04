@@ -46,12 +46,8 @@ export class Register implements OnInit {
       this.authService.register_step1(this.registerForm.value).subscribe({
         next: (res) => {
           console.log('Register success', res);
-          // reset form
           this.registerForm.reset();
-          // حفظ التوكن
-          localStorage.setItem('token', res.data.accessToken);
-          // redirect
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/login']);
         },
         error: (err) => {
           const backendMessage: string = err.error?.message || '';
@@ -63,8 +59,6 @@ export class Register implements OnInit {
           } else {
             this.errorMessage = 'Registration failed';
           }
-
-          // Force Angular to update the template immediately
           this.cdr.detectChanges();
         }
       });
