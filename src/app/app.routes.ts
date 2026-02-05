@@ -11,6 +11,7 @@ import { RadiologyDetails } from './pages/radiology-details/radiology-details';
 import { Diagnoses } from './pages/diagnoses/diagnoses';
 import { DoctorNotes } from './pages/doctor-notes/doctor-notes';
 import { Medications } from './pages/medications/medications';
+import { authGuard } from './core/guards/auth-guard';
 
 export const routes: Routes = [
   { path: '', component: Landing },
@@ -21,6 +22,7 @@ export const routes: Routes = [
   {
     path: '',
     component: DashboardLayout,
+    canActivate: [authGuard],   // 👈 هنا الحماية
     children: [
       { path: 'dashboard', component: Dashboard },
       { path: 'lab-tests', component: LabTests },
@@ -31,6 +33,7 @@ export const routes: Routes = [
       { path: 'doctor-notes', component: DoctorNotes },
       { path: 'medications', component: Medications },
     ]
-  }
-];
+  },
 
+  { path: '**', redirectTo: '', pathMatch: 'full' }
+];
